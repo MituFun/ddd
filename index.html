@@ -1,9 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=http://119.3.182.171/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跳转页面</title>
+    <script>
+        function isWeChat() {
+            var ua = navigator.userAgent.toLowerCase();
+            return ua.indexOf('micromessenger') !== -1;
+        }
+        
+        window.onload = function() {
+            if (isWeChat()) {
+                document.getElementById('wechat-tip').style.display = 'block';
+            } else {
+                window.location.href = "http://119.3.182.171/";
+            }
+        }
+    </script>
+    <style>
+        #wechat-tip {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+    <div id="wechat-tip">请点击右上角 “...” 在浏览器中打开</div>
 </body>
 </html>
