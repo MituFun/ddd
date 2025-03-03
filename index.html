@@ -3,37 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>跳转页面</title>
-    <script>
-        function isWeChat() {
-            var ua = navigator.userAgent.toLowerCase();
-            return ua.indexOf('micromessenger') !== -1;
-        }
-        
-        window.onload = function() {
-            if (isWeChat()) {
-                document.getElementById('wechat-tip').style.display = 'block';
-            } else {
-                window.location.href = "http://119.3.182.171/";
-            }
-        }
-    </script>
+    <meta http-equiv="refresh" content="0;url=http://119.3.182.171/">
+    <title>韭菜鸡蛋墙</title>
     <style>
-        #wechat-tip {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            background: white;
             padding: 20px;
             border-radius: 10px;
-            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div id="wechat-tip">请点击右上角 “...” 在浏览器中打开</div>
+    <div class="container">
+        <p>韭菜鸡蛋墙！！！</p>
+        <p>如果没有自动跳转，请 <a href="http://119.3.182.171/">点击这里</a>。</p>
+    </div>
 </body>
 </html>
